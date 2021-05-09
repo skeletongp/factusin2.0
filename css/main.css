@@ -1,0 +1,270 @@
+body {}
+
+@keyframes aparecer {
+    0% {
+        visibility: 0;
+    }
+
+    100% {
+        visibility: 1;
+    }
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#cargando {
+    width: 40vh;
+    height: 40vh;
+    color: lightskyblue;
+    background-color: transparent;
+    position: fixed;
+    margin-left: 35vw;
+    margin-top: 40vh;
+    padding-top: 2em;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+.sidenav a {
+
+    margin-left: 1.3em;
+    margin-bottom: 1.5rem;
+    color: lightskyblue;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(44, 62, 80);
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-top: 3em;
+    padding-top: 4em;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+#icon-menu {
+    transition: 2s;
+}
+
+.card-body h5 {
+    font-weight: bold;
+}
+
+.card-body * {
+    -webkit-user-select: none;
+}
+
+tr {
+    border-bottom: solid 1px rgba(150, 150, 150, 0.5);
+}
+
+#spanTitulo :hover {
+    cursor: move;
+    color: red;
+}
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 2.5em;
+    right: 2em;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 120;
+}
+
+.my-float {
+    margin-top: 0.5em;
+    font-size: xx-large;
+}
+
+table * {
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+.profile {
+    width: 26rem;
+    height: 22rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.profile * {
+    font-weight: bold;
+}
+
+.profile h4 {
+    margin-bottom: 0.85rem;
+}
+
+
+.profile span {
+    color: cadetblue;
+    text-decoration: underline;
+    font-size: 1.1rem;
+
+}
+
+.navbar {
+    background-color: rgba(44, 62, 80);
+}
+
+.card1,
+.card2,
+.card3 {
+    margin: 1.3rem;
+    margin-top: 6rem;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32%;
+    height: 12rem;
+    background-image: url('../assets/fondoCard3.png');
+    align-items: flex-end;
+
+}
+
+.span-icon {
+    color: white;
+}
+
+.card-titulo {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    margin: 4px;
+}
+
+.circle-icon {
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    margin-top: 3.5rem;
+    margin-left: 1.5rem;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.fct-contain-outer {
+    width: 90%;
+    margin: auto;
+    vertical-align: top;
+    background-color: white;
+}
+ td{
+     vertical-align: middle !important;
+ }
+.selectproduct {
+    height: 50px;
+}
+.trtotales td{
+    font-weight: bold;
+    border-top: solid 1px rgb(11, 30, 46);
+}
+
+@media print {
+    .ocultar, #logo, .esconder{
+      display:none;
+    }
+   
+    .fct-contain-outer{
+       background-color: aquamarine;
+    }
+    .col1{
+        width: 25%;
+    }
+   *{
+       width: fit-content;
+       margin: 1px;
+       padding: 1px;
+       max-width: 79mm;
+   }
+   .tFactura{
+       font-size: 1.2rem !important;
+       text-align: center !important;
+   }
+   .resultados, .resultados *{
+       margin: auto;
+       text-align: center;
+   }
+  }
+  h1{
+    color:#f6f6;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.encabezado span{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+  .encabezado{
+    font-weight: bold;
+    text-align: center;
+  }
+  .vl {
+  display: inline-block;
+  border-left: 2px solid black;
+  height: 200px;
+  margin: auto;
+}
+.cuadro2{
+  border-left: solid 1px black;
+}
+@page{
+    width: 79mm ;
+    margin: 0px;
+    padding: 0;
+}

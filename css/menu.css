@@ -1,0 +1,112 @@
+.menu input {position: absolute; display: none}
+
+
+
+.menu {
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 3%;
+  margin-left: -25px;
+  margin-top: -25px;
+}
+
+.boton {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.material-icons.md-36 { font-size: 36px; color: #03A9F4 }
+
+.boton {
+  background: #ECEFF1;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.boton:not(:first-child) {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  z-index: -2;
+  
+  -webkit-transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
+  transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
+}
+
+.boton:nth-child(2) {top:0px;-webkit-transition-delay: 0s;transition-delay: 0s}
+.boton:nth-child(3) {top:0px;left:0px;-webkit-transition-delay: 0.1s;transition-delay: 0.1s}
+.boton:nth-child(4) {left:0px;;-webkit-transition-delay: 0.2s;;transition-delay: 0.2s}
+.boton:nth-child(5) {top:0px;left:0px;-webkit-transition-delay: 0.3s;transition-delay: 0.3s}
+.boton:nth-child(6) {top:0px;-webkit-transition-delay: 0.4s;transition-delay: 0.4s}
+.boton:nth-child(7) {top:0px;left:0px;-webkit-transition-delay: 0.5s;transition-delay: 0.5s}
+.boton:nth-child(8) {left:0px;-webkit-transition-delay: 0.6s;transition-delay: 0.6s}
+.boton:nth-child(9) {top:0px;left:0px;-webkit-transition-delay: 0.7s;transition-delay: 0.7s}
+
+input#toggle:checked ~ #show-menu .boton:nth-child(2) {
+  top:-150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .boton:nth-child(3) {
+  top:-100px;left:100px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .boton:nth-child(4) {
+  left:150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .boton:nth-child(5) {
+  top :100px;left:100px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .boton:nth-child(6) {
+  top:150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .boton:nth-child(7) {
+  top:100px;left:-100px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .boton:nth-child(8) {
+  left:-150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .boton:nth-child(9) {
+  top:-100px;left:-100px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.menuBtn, .closeBtn {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.closeBtn {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+input#toggle:checked ~ #show-menu .boton .menuBtn {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+input#toggle:checked ~ #show-menu .boton .closeBtn {
+  transform: translateY(0px);
+  opacity: 1;
+}
