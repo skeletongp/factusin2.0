@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factusin 2.0</title>
+
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--Incluir estilos y scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../material-kit-master/assets/css/material-kit.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://unpkg.com/ed-grid@3.0.0/src/css/ed-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css"
+        integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+
+    <link href="https://unpkg.com/ed-grid@3.0.0/src/css/ed-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="..//css/menu.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--Barra de menú-->
+    <div id="menuBar" class="ocultar">
+
+    </div>
+</head>
+
+<body id="cuerpo">
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!-- Contenido del documento -->
+    <div class="fct-contain-outer jumbotron" id="todo" style="margin-top: 6px;">
+        <div style="width: fit-content; margin:auto" class="mb-4">
+            <span
+                style="font-weight: bold; font-size: 2.0rem; text-transform: uppercase; width: fit-content; margin:auto;">Cotización</span>
+
+        </div>
+        <!--Contine información de la factura-->
+        <div class="ed-grid m-grid-3">
+            <div class="form-group">
+                <div class="form-group ocultar" style="max-width: 80%;">
+                    <label for="clienteId">Facturar A:</label>
+                    <select class="form-control mb-2 ocultar" name="clienteId" id="clienteId"
+                        style="font-size: large; font-weight: bold;">
+                        <option value="">Seleccionar cliente</option>
+                    </select>
+                </div>
+                <span id="nomCliente" style="font-weight: bold;"></span><br>
+                <span id="telCliente"></span><br>
+                <span id="correoCliente"></span><br>
+                <span id="dirCliente"></span><br>
+            </div>
+            <div>
+                <img id="logo" style="width: 18rem; margin:auto;" src="../assets/logo.png" alt="">
+            </div>
+            <div class="ml-auto">
+                <b>Fecha:</b> <span id="spFecha"></span><br>
+                <b>Cot. No. </b><span id="spFactura"></span><br>
+
+            </div>
+        </div>
+        <!--Parte donde se facturan los productos-->
+        <form name="formu" id="formu"></form>
+
+        <div class=" form-group form-check ml-auto ocultar">
+            <label class="form-check-label ocultar" for="exampleCheck1">Calcular impuesto</label>
+            <input type="checkbox" class="ml-2 ocultar" id="chkImpuesto">
+        </div>
+        <div class="d-flex ocultar" id="divAdd">
+            <div style="width: 100%;" class="m-2 ml-1 ocultar">
+                <label for="productoId">Producto</label><br>
+                <select name="productoId" id="productoId" class="form-control m-1  bg-light ">
+                    <option value="" id="selVacio">Seleccionar producto</option>
+                </select>
+            </div>
+
+
+            <div class="m-2 ml-1 ocultar">
+                <label for="cantidad">Cantidad (<span id="prodDisponible">0</span>)</label>
+                <input style=" text-align: center;" id="cantidad" class="form-control m-1 bg-light" type="number"
+                    min="1" value="1">
+            </div>
+            <div class="m-2 ml-1 ocultar">
+                <label for="precio">Precio</label>
+                <input style=" text-align: center;" form="#formu" id="precio" class="form-control m-1 bg-light"
+                    type="number" min="1" value="1" required>
+            </div>
+            <div class=" m-2 ml-1 mt-4 ocultar" id="btnAdd">
+                <input type="submit" class="btn btn-info p-0 mt-3" form="#formu"
+                    style="border-radius: 50%; height: 2rem; width: 2rem; font-size:x-large; vertical-align: middle;"
+                    value="+">
+            </div>
+        </div>
+
+        <!--Tabla de la factura-->
+        <div class="d-flex">
+            <table class="table" id="tablaFactura">
+                <thead>
+                    <th>Producto</th>
+                    <th>Cant.</th>
+                    <th>Precio</th>
+                    <th>Subt.</th>
+                    <th>Imp.</th>
+                    <th>Total</th>
+                </thead>
+                <tbody id="tbcuerpo">
+
+                </tbody>
+                <tfoot>
+                    <tr class="trtotales">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td id="tsubtotal"></td>
+                        <td id="timpuesto"></td>
+                        <td id="ttotal"></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+        <div class="m-100 ">
+            <div class="ml-auto ocultar" style="width: fit-content;">
+                <button class="ml-auto btn btn-secondary" id="btnCotizar" onclick="cobrarFactura()">Cotizar</button>
+            </div>
+            <div class="ml-auto" style="width: fit-content;">
+                <span id="pagado" style="font-weight: bold;"></span><br>
+                <hr class="m-0">
+                <span id="resta"></span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="modalCat"></div>
+
+</body>
+
+<!--//////////////////////////////////////////////////////////////////////////////-->
+<!--//////////////////////////////////////////////////////////////////////////////-->
+<!--//////////////////////////////////////////////////////////////////////////////-->
+<!-- Scripts -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css" />
+<script src="../scripts/html2pdf.js"></script>
+<script type="text/javascript" src="../scripts/menu.js"></script>
+<script src="https://unpkg.com/html2canvas@latest/dist/html2canvas.js"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+<script type="text/javascript" src="../scripts/vntCotizar.js"></script>
+<link rel="stylesheet" href="../material-kit-master/assets/css/material-kit.css">
+
+</html>

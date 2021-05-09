@@ -1,0 +1,4 @@
+﻿Codigo;Nombre;Precio;Costo;Categoria;Proveedor;Existencia;Nota;Tipo
+SIL32;Silla;275;200;1;1;14;.;Producto
+TAB43;Taburete;800;675;1;1;12;.;Producto
+BAN44;Banco;745;650;1;1;8;.;Producto

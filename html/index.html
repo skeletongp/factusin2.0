@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factusin 2.0</title>
+
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--Incluir estilos y scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://unpkg.com/ed-grid@3.0.0/src/css/ed-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css"
+        integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+
+    <link href="https://unpkg.com/ed-grid@3.0.0/src/css/ed-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="..//css/menu.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--Barra de menú-->
+    <div id="menuBar">
+
+    </div>
+</head>
+
+<body id="cuerpo">
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!-- Contenido del documento -->
+    <div class="ed-grid m-grd-3">
+        <div class="d-flex card-div">
+            <div class="card1 shadow-lg pr-4">
+                <div class="circle-icon ">
+                    <span class="iconify text-info" data-icon="ic:sharp-inventory" data-inline="true"
+                        style="position: absolute; font-size: 8rem; margin: auto;"></span>
+                </div>
+                <h2 class="card-titulo text-dark">Total en Inventario</h2>
+                <h3 class="card-titulo" data-content=" Productos en Inventario" data-toggle="popover" role="button"
+                  onclick="openProductos()"  data-placement="right" data-trigger="hover" style="text-align: right;" id="spTotal"></h3>
+                <h3 class="card-titulo  mt-3" data-content=" Inventario para venta" data-toggle="popover"
+                    data-placement="right" data-trigger="hover" style="text-align: right;" id="spTPrecio"></h3>
+                <h3 class="card-titulo " data-content=" Inventario al costo" data-toggle="popover"
+                    data-placement="right" data-trigger="hover" style="text-align: right;" id="spTCosto"></h3>
+            </div>
+
+            <div class="card2 shadow-lg pr-4">
+                <div class="circle-icon ">
+                    <span class="iconify text-success" data-icon="bx:bxs-dollar-circle" data-inline="true"
+                        style="position: absolute; font-size: 8rem; margin: auto;"></span>
+                </div>
+                <h2 class="card-titulo text-dark">Ventas del mes</h2>
+                <h3 class="card-titulo" role="button" onclick="openVentas()" data-content=" Ventas en total" data-toggle="popover" data-placement="right"
+                    data-trigger="hover" style="text-align: right;" id="spVentaTotal"></h3>
+                <h3 class="card-titulo  mt-3" data-content=" Ventas al Contado" data-toggle="popover"
+                    data-placement="right" data-trigger="hover" style="text-align: right;" id="spVentaContado"></h3>
+                <h3 class="card-titulo " data-content=" Ventas a crédito" data-toggle="popover" data-placement="right"
+                    data-trigger="hover" style="text-align: right;" id="spVentaCredito"></h3>
+
+            </div>
+            <div class="card3 pr-4">
+                <div class="circle-icon ">
+                    <span class="iconify text-danger" data-icon="ic:round-account-balance-wallet" data-inline="true"
+                        style="position: absolute; font-size: 8rem; margin: auto;"></span>
+                </div>
+                <h2 class="card-titulo text-dark">Saldo de Cuentas</h2>
+                <h3 class="card-titulo ml-auto" data-content=" Balance de Cuentas" data-toggle="popover" data-placement="top"
+                    data-trigger="hover" style="text-align: right; width: fit-content;" id="spBalance"></h3>
+                <h3 class="card-titulo  mt-3 ml-auto" data-content=" Cuentas por Cobrar" data-toggle="popover" role="button"
+                  onclick="openPorCobrar()"  data-placement="top" data-trigger="hover" style="text-align: right; width: fit-content" id="spCxC"></h3>
+                <h3 class="card-titulo ml-auto" data-content=" Cuentas por Pagar" data-toggle="popover" data-placement="top"
+                    data-trigger="hover" style="text-align: right; width: fit-content" id="spCxP"></h3>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
+
+    <div class="ed-grid m-grid-2" style="bottom: 0; left: 0; max-height: 200px;">
+        <canvas id='canvasId' width='600' height='200' class=""
+            style="position: absolute; bottom: 15%; left: 10%; max-width: 500px; max-height: 400px; min-height: 200; min-width: 600; background-color: rgba(155,155,155, 0.1);"></canvas>
+        <canvas id='canvasId2' width='600' height='200' class=""
+            style="position: absolute; right: 10%; bottom: 15%; max-width: 500px; max-height: 500px; min-height: 200; min-width: 600; background-color: rgba(155,155,155, 0.1);"></canvas>
+    </div>
+    <div id="cargando">
+        <img
+          width="200"
+         src="../assets/cargando.gif" />
+        <p>
+          Cargando contenido
+        </p>
+      </div>
+    <div id="modalCat"></div>
+    <div class="menu">
+        <input type="checkbox" id="toggle" />
+        <label id="show-menu" for="toggle">
+            <div class="boton">
+                <i class="material-icons md-36 toggleBtn menuBtn" role="button" data-toggle="popover"
+                    data-content="Atajos" data-trigger="hover" data-placement="top">menu</i>
+                <i class="material-icons md-36 toggleBtn closeBtn">close</i>
+            </div>
+            <div class="boton" onclick="openNFactura()">
+                <i class="material-icons md-36" role="button" data-toggle="popover" data-content="Nueva Factura"
+                    data-trigger="hover">addchart</i>
+            </div>
+            <div class="boton" onclick="openClientes()">
+                <i class="material-icons md-36" role="button" data-toggle="popover" data-content="Clientes"
+                    data-trigger="hover">group</i>
+            </div>
+            <div class="boton" onclick="openProductos()">
+                <i class="material-icons md-36" role="button" data-toggle="popover" data-content="Productos"
+                    data-trigger="hover">inventory_2</i>
+            </div>
+            <div class="boton" onclick="openProveedores()">
+                <i class="material-icons md-36" role="button" data-toggle="popover" data-content="Proveedores"
+                    data-trigger="hover">local_shipping</i>
+            </div>
+            <div class="boton" onclick="openPorCobrar()">
+                <i class="material-icons md-36" role="button" data-toggle="popover" data-content="CxC"
+                    data-trigger="hover">&#xe850</i>
+            </div>
+
+        </label>
+        
+</body>
+
+<!--//////////////////////////////////////////////////////////////////////////////-->
+<!--//////////////////////////////////////////////////////////////////////////////-->
+<!--//////////////////////////////////////////////////////////////////////////////-->
+<!-- Scripts -->
+
+<script type="text/javascript" src="../scripts/menu.js"></script>
+
+<script type="text/javascript" src="../scripts/index.js"></script>
+
+</html>
