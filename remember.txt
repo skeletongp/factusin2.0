@@ -1,0 +1,5 @@
+Para usar const var = require ('module') debo tener el archivo require.js en la misma carpeta que el main process
+debo incluirlo en cada html antes de incluir sus scripts
+Ojo a la ruta <script data-main="scripts/main" src="../../../main/require.js"></script>
+Los css y scripts externos los incluyo en el HEAD, los scrips internos los incluyo debajo del body
+Ctrl+Alt+U Subir productos desde CSV (Sólo soporte técnico, ya que oculté el botón correspondiente)

@@ -1,0 +1,28 @@
+{
+  "name": "AppSqlite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^12.0.2",
+    "electron-builder": "^22.10.5",
+    "electron-download-manager": "^2.1.2",
+    "electron-prompt": "^1.6.2",
+    "electron-reload": "^1.5.0",
+    "html2pdf": "^0.0.11",
+    "jquery": "^3.6.0",
+    "jquery-csv": "^1.0.11",
+    "jspdf": "^2.3.1",
+    "jspdf-autotable": "^3.5.14",
+    "particle.js": "^1.0.7",
+    "print-html-element": "^0.5.1",
+    "sqlite3": "^5.0.2",
+    "sweetalert2": "^10.15.7"
+  }
+}
