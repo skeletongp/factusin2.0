@@ -1,2 +1,2 @@
 # appsqlite
-Sistema Factusin con ElectronJs y Sqlite3
+Sistema de Facturación con ElectronJs y Sqlite3
